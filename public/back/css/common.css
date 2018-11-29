@@ -15,6 +15,12 @@ ul {
   color: #A94442;
 }
 
+.table.table-bordered td,
+.table.table-bordered th {
+  text-align: center;
+  vertical-align: middle;
+}
+
 .body_bg {
   background-color: #222d32;
 }
@@ -125,7 +131,7 @@ ul {
   z-index: 998;
 }
 .lt_topbar.hidemenu {
-  padding-left: 0;
+  padding-left: 0px;
 }
 
 .lt_topbar .icon_left,
