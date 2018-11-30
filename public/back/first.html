@@ -50,13 +50,35 @@
       <!-- 面包屑导航 -->
       <ol class="breadcrumb mt_20">
           <li><a href="index.html">管理系统</a></li>
-          <li class="active">首页</li>
+          <li class="active">分类管理</li>
+          <li class="active">一级分类</li>
         </ol>
-        <!-- 准备两个具备宽高的容器 -->
+        
         <div class="lt_content">
-          <div class="echarts_left pull-left"></div>
-          <div class="echarts_right pull-right"></div>
+
+          <!-- 添加按钮 -->
+          <button class="btn btn-default" id="addBtn">添加分类</button>
+
+          <!-- 表格 -->
+          <table class="table table-bordered table-hover mt_20">
+            <thead>
+              <tr>
+                <th item-width="20%">序号</th>
+                <th item-width="80%">一级分类名</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 挖坑 -->
+            </tbody>
+          </table>
+
+          <div class="text-right">
+            <!-- 准备一个分页容器 3.x 要求ul -->
+            <ul id="paginator"></ul>
+          </div>
+
         </div>
+
     </div>
   </div>
 
@@ -77,17 +99,29 @@
             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
             <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>
+      </div>
+    </div>
+
+    <script type="text/html" id="firstTpl">
+      {{ each rows v i }}
+        <tr>
+          <td>{{ i + 1 + (page - 1) * size}}</td>
+          <td>{{ v.categoryName }}</td>
+        </tr>
+      {{ /each }}
+    </script>
     
 
   <script src="./lib/jquery/jquery.min.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/isLogin.js"></script>
+  <script src="./js/first.js"></script>
 
 </body>
 </html>
